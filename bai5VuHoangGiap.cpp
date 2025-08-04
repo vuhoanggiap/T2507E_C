@@ -1,14 +1,41 @@
 #include <stdio.h>
-
+#include <math.h>
 int main(){
 	float a , b , c;
-	printf("cho phuong trinh ax^2 + bx + c = 0\n");
-	printf("hay nhap gia tri cua a,b,c de tim gia tri cua x");
-	printf("Ban phai tra so tien: %f",d " nghin dong");
+	printf("cho phuong trinh ax² + bx + c = 0\n");
+	printf("hay nhap a,b,c de tim gia tri cua x\n");
+	printf("Nhap a = ");
 	scanf("%f",&a);
-	printf("Ban phai tra so tien: %f",d " nghin dong");
+	printf("Nhap b = ");
 	scanf("%f",&b);
-	printf("Ban phai tra so tien: %f",d " nghin dong");
+	printf("Nhap c = ");
 	scanf("%f",&c);
+	
+	float bbp = b*b;
+	float bac = a*c;
+	float delta = bbp - 4*bac;
+	float b2 = b - 2*b;
+	float cdelta = sqrt(delta);
+
+	
+	float tu1 = b2 + cdelta;
+	float tu2 = b2 - cdelta;
+	float mau = 2*a;
+	
+	float pt1 = tu1 / mau;
+	float pt2 = tu2 / mau;
+	float pt3 = b2 / mau;
+	
+	if(delta > 0){
+		printf("phuong trinh co 2 nghiem phan biet:\n");
+		printf("nghiem thu nhat:%.0f\n",pt1);
+		printf("nghiem thu hai:%.0f\n",pt2);
+	}else if(delta == 0){
+		printf("phuong trinh co nghiem kep:%f.0\n",pt3);
+	}else{
+		printf("phuong trinh vo nghiem");
+	};
 	return 0;
+	
 }
+
